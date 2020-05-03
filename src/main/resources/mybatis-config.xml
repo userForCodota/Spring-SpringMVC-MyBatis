@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--在单独的mybatis中，mybatis是需要配置数据源的，但是现在是整合了spring-->
+    <!--mybatis基本的配置：别名（告诉）-->
+    <typeAliases>
+        <package name="com.chengfeng.pojo"/>
+    </typeAliases>
+    <mappers>
+        <mapper class="com.chengfeng.dao.BookMapper"/>
+    </mappers>
+</configuration>

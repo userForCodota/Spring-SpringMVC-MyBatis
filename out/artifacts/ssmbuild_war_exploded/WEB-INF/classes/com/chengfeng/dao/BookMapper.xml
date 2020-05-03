@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chengfeng.dao.BookMapper">
+    <insert id="addBooks" parameterType="Books">
+        INSERT INTO ssmbuild.books(bookName, bookCounts, detail) VALUES (#{bookName},#{bookCounts},#{detail});
+    </insert>
+    <delete id="deleteBookById" parameterType="int">
+        DELETE FROM ssmbuild.books WHERE bookID=#{bookId};
+    </delete>
+    <update id="updateBook" parameterType="Books">
+        UPDATE ssmbuild.books SET bookName=#{bookName},bookCounts=#{bookCounts},detail=#{detail} WHERE bookID=#{bookId};
+    </update>
+    <select id="queryBookById" parameterType="int" resultType="Books">
+        SELECT * FROM ssmbuild.books WHERE bookID=#{bookId};
+    </select>
+    <select id="queryAllBook" resultType="Books">
+        SELECT * FROM ssmbuild.books;
+    </select>
+
+</mapper>
+
+
+
